@@ -10,6 +10,8 @@ public class LL {
         }
     }
     
+
+    // insert at last
     public void insertFirst(String data){
         Node newNode=new Node(data);
 
@@ -21,6 +23,7 @@ public class LL {
         head =newNode;
     }
 
+    //inser at last
     public void insertLast(String data){
         Node newNode=new Node(data);
 
@@ -35,6 +38,7 @@ public class LL {
         temp.next=newNode;
     }
 
+    // Print the linked list
     public void printList(){
         Node temp=head;
         while(temp!=null){
@@ -43,6 +47,36 @@ public class LL {
         }
         System.out.print("NULL");
     }
+
+    // Delete at First
+    public void DeleteFirst(){
+        if(head==null){
+            System.out.println("The list is empty:(");
+            return;
+        }
+
+        head=head.next;
+    }
+
+    // Delete at last
+    public void DeleteLast(){
+        if(head==null){
+            System.out.println("The list is empty:(");
+            return;
+        }
+        if(head.next==null){
+            head=null;
+            return;
+        }
+
+        Node secondLast=head;
+        Node lastNode=head.next;//if head.next==null
+        while(lastNode.next!=null){//null.next
+            lastNode=lastNode.next;
+            secondLast=secondLast.next;
+        }
+        secondLast.next=null;
+    }
     public static void main(String[] args) {
         LL obj=new LL();
         obj.insertFirst("krsiha");
@@ -50,6 +84,10 @@ public class LL {
 
         obj.insertLast("Sita");
         obj.insertLast("Ram");
+
+        obj.DeleteFirst();
+
+        obj.DeleteLast();
         obj.printList();
     }
 }
