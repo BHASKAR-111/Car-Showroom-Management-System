@@ -1,4 +1,4 @@
-public class preac {
+public class prac {
     Node head;
     class Node{
         String data;
@@ -57,7 +57,7 @@ public class preac {
         secondLast.next=null;
     }
     public static void main(String[] args) {
-        preac obj=new preac();
+        prac obj=new prac();
         obj.insertFirst("ram");
         obj.printList();
         obj.insertFirst("sita");
