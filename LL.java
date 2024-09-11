@@ -1,5 +1,11 @@
 public class LL {
     Node head;
+    private int size;
+
+    LL(){
+        this.size=0;
+    }
+
     class Node{
         String data;
         Node next;
@@ -7,6 +13,7 @@ public class LL {
         Node(String data){
             this.data=data;
             this.next=null;
+            size++; 
         }
     }
     
@@ -45,25 +52,28 @@ public class LL {
             System.out.print(temp.data+"-->");
             temp=temp.next;
         }
-        System.out.print("NULL");
+        System.out.println("NULL");
     }
 
     // Delete at First
-    public void DeleteFirst(){
+    public void deleteFirst(){
         if(head==null){
             System.out.println("The list is empty:(");
             return;
         }
 
+        size--;
         head=head.next;
     }
 
     // Delete at last
-    public void DeleteLast(){
+    public void deleteLast(){
         if(head==null){
             System.out.println("The list is empty:(");
             return;
         }
+
+        size--;
         if(head.next==null){
             head=null;
             return;
@@ -77,17 +87,30 @@ public class LL {
         }
         secondLast.next=null;
     }
+
+    public int getSize(){
+        return size;
+    }
     public static void main(String[] args) {
         LL obj=new LL();
-        obj.insertFirst("krsiha");
-        obj.insertFirst("Radha");
-
-        obj.insertLast("Sita");
-        obj.insertLast("Ram");
-
-        obj.DeleteFirst();
-
-        obj.DeleteLast();
+        obj.insertFirst("ram");
+        obj.insertFirst("sita");
         obj.printList();
+
+        obj.insertLast("Radha");
+        obj.insertLast("krishna");
+        obj.printList();
+
+        obj.deleteFirst();
+        obj.printList();
+
+        obj.deleteLast();
+        obj.printList();
+
+        System.out.println(obj.getSize());
+
+        obj.insertFirst("sita");
+        obj.printList();
+        System.out.println(obj.getSize());
     }
 }
