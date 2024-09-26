@@ -1,4 +1,4 @@
-package Car_Showroom_Management_System;
+package Car_Showrooom_Management_System;
 
 import java.util.Scanner;
 
